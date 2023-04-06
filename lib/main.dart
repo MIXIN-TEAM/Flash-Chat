@@ -3,19 +3,27 @@ import './screens/welcome_screen.dart';
 import './screens/login_screen.dart';
 import './screens/registration_screen.dart';
 import './screens/chat_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(FlashChat());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(FlashChat());
+}
 
 class FlashChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
         textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.black54),
+          bodyMedium: TextStyle(
+            color: Colors.black54,
+          ),
+          titleMedium: TextStyle(color: Colors.black),
         ),
       ),
-      initialRoute: LoginScreen.id,
+      initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),

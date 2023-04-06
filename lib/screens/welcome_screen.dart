@@ -79,7 +79,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               color: Colors.lightBlue,
-              text: Text('Log In'),
+              text: Text(
+                'Log In',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               onTapped: () {
                 Navigator.push(
                     context,
@@ -90,7 +95,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               color: Colors.black,
-              text: Text('Register Now'),
+              text: Text(
+                'Register Now',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               onTapped: () {
                 Navigator.push(
                   context,
